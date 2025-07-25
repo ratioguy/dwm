@@ -10,13 +10,11 @@ static const unsigned int gappov    = 5;       /* vert outer gap between windows
 static       int smartgaps          = 0;        /* 1 means no outer gap when there is only one window */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "monospace:size=10" };
-static const char dmenufont[]       = "monospace:size=10";
-static const char col_gray1[]       = "#222222";
-static const char col_gray2[]       = "#444444";
-static const char col_gray3[]       = "#bbbbbb";
+static const char *fonts[]          = { "LiterationMono Nerd Font:size=10" };
+static const char col_gray1[]       = "#1e1c1b";
+static const char col_gray2[]       = "#504945";
+static const char col_gray3[]       = "#ebdbb2";
 static const char col_gray4[]       = "#dddddd";
-static const char col_cyan[]        = "#005577";
 static const char col_yellow[]        = "#d79920";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
@@ -97,8 +95,8 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,		XK_s,	   spawn,     	   SHCMD("bash ~/.local/bin/volume.sh mute") },
 	{ MODKEY,			XK_o,	   spawn,     	   SHCMD("pactl set-default-sink alsa_output.usb-HP_HP_Speaker_Bar-00.analog-stereo ; notify-send -t 8000 Output: Speaker") },
 	{ MODKEY|ShiftMask,		XK_o,	   spawn,     	   SHCMD("pactl set-default-sink alsa_output.pci-0000_00_1f.3.analog-stereo ; notify-send -t 8000 Output: Headphones") },
-	{0,          XF86XK_MonBrightnessUp, 	   spawn,    	   SHCMD("light -A 5% ; notify-send Brightness $(light)") },
-	{0,          XF86XK_MonBrightnessDown, 	   spawn,    	   SHCMD("light -U 5% ; notify-send Brightness $(light)") },
+	{0,          XF86XK_MonBrightnessUp, 	   spawn,    	   SHCMD("brightnessctl -d intel_backlight set 5%+ ; notify-send Brightness $(brightnessctl  | grep % | awk '{print $4}' | sed 's/[()]//g')") },
+	{0,          XF86XK_MonBrightnessDown, 	   spawn,    	   SHCMD("brightnessctl -d intel_backlight set 5%- ; notify-send Brightness $(brightnessctl  | grep % | awk '{print $4}' | sed 's/[()]//g')") },
 	{ MODKEY,			XK_p,	   spawn,     	   SHCMD("scrot --select --line mode=edge --freeze ~/Pictures/Screenshots/Screenshot-%Y-%m-%d.png ; notify-send -t 2000 'Screenshot Taken.'") },
 	
 	{ MODKEY|Mod1Mask,		XK_p,	   spawn,     	   SHCMD("scrot --focussed --freeze ~/Pictures/Screenshots/Screenshot-%Y-%m-%d.png ; notify-send -t 2000 'Screenshot Taken.'") },
