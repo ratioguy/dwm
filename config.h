@@ -38,7 +38,6 @@ static const Rule rules[] = {
 	{ "dialog",   NULL,     NULL,         0,            1,           -1 },
 	{ "gimp-file-open",     NULL,         0,       0,            1,           -1 },
 	{ "Pcmanfm",  NULL,     NULL,         0,            1,           -1 },
-	{ "mpv",      NULL,  NULL,            0,            1,           -1 },
 	{ "st",       NULL,     "youtube-launcher",       0,            1,           -1 },
 	{ "st",       NULL,     "pulsemixer",  0,            1,            -1 },
 
