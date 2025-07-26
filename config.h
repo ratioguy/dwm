@@ -108,8 +108,6 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
-	{ MODKEY,                       XK_p,      incnmaster,     {.i = +1 } },
-	{ MODKEY,                       XK_c,      incnmaster,     {.i = -1 } },
 	{ MODKEY|Mod1Mask,              XK_h,      setmfact,       {.f = -0.05} },
 	{ MODKEY|Mod1Mask,              XK_l,      setmfact,       {.f = +0.05} },
 	{ MODKEY|ShiftMask,             XK_j,      movestack,      {.i = +1 } },
