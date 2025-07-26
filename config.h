@@ -119,7 +119,7 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_grave,  view,           {0} },
 	{ MODKEY,	                XK_q,      killclient,     {0} },
 	{ MODKEY,                       XK_z,      setlayout,      {.v = &layouts[0]} },
-	{ MODKEY,                       XK_x,      setlayout,      {.v = &layouts[2]} },
+	{ MODKEY,                       XK_x,      setlayout,      {.v = &layouts[1]} },
 	{ MODKEY,                       XK_f,      togglefullscr,   {0} },
 	{ MODKEY,	                XK_space,  togglefloating, {0} },
 	{ MODKEY,                       XK_0,      view,           {.ui = ~0 } },
