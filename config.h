@@ -115,15 +115,12 @@ static const Key keys[] = {
 	{ MODKEY|Mod1Mask,              XK_k,      setcfact,       {.f = +0.25} },
 	{ MODKEY|Mod1Mask,              XK_j,      setcfact,       {.f = -0.25} },
 	{ MODKEY|ShiftMask,             XK_o,      setcfact,       {.f =  0.00} },
-	/*{ MODKEY,                     XK_Return, zoom,           {0} },*/
 	{ MODKEY,	                XK_g,      togglegaps,     {0} },
 	{ MODKEY,                       XK_grave,  view,           {0} },
 	{ MODKEY,	                XK_q,      killclient,     {0} },
 	{ MODKEY,                       XK_z,      setlayout,      {.v = &layouts[0]} },
 	{ MODKEY,                       XK_x,      setlayout,      {.v = &layouts[2]} },
 	{ MODKEY,                       XK_f,      togglefullscr,   {0} },
-	/*{ MODKEY,                     XK_f,      setlayout,      {.v = &layouts[1]} },*/
-	/*{ MODKEY,                     XK_space,  setlayout,      {0} },*/
 	{ MODKEY,	                XK_space,  togglefloating, {0} },
 	{ MODKEY,                       XK_0,      view,           {.ui = ~0 } },
 	{ MODKEY|ShiftMask,             XK_0,      tag,            {.ui = ~0 } },
@@ -154,7 +151,6 @@ static const Button buttons[] = {
 	/* click                event mask      button          function        argument */
 	{ ClkLtSymbol,          0,              Button1,        setlayout,      {0} },
 	{ ClkLtSymbol,          0,              Button3,        setlayout,      {.v = &layouts[2]} },
-	{ ClkWinTitle,          0,              Button2,        zoom,           {0} },
 	{ ClkStatusText,        0,              Button2,        spawn,          SHCMD("st") },
 	{ ClkClientWin,         MODKEY,         Button1,        movemouse,      {0} },
 	{ ClkClientWin,         MODKEY,         Button2,        togglefloating, {0} },
