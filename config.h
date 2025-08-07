@@ -105,7 +105,6 @@ static const Key keys[] = {
 	{ MODKEY,			XK_bracketleft,	   spawn,  SHCMD("playerctl previous") },
 
 
-	{ MODKEY|ShiftMask,             XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
 	{ MODKEY|Mod1Mask,              XK_h,      setmfact,       {.f = -0.05} },
