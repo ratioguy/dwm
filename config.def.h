@@ -35,7 +35,7 @@ static const Rule rules[] = {
 	{ "MuPDF",    NULL,     NULL,         0,            1,           -1 },
 	{ "dialog",   NULL,     NULL,         0,            1,           -1 },
 	{ "gimp-file-open",     NULL,         0,       0,            1,           -1 },
-	{ "Pcmanfm",  NULL,     NULL,         0,            1,           -1 },
+	{ "Thunar",   NULL,     NULL,         0,            1,           -1 },
 	{ "st",       NULL,     "youtube-launcher",       0,            1,           -1 },
 	{ "st",       NULL,     "pulsemixer",  0,            1,            -1 },
 
@@ -140,7 +140,7 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_equal,  scratchpad_show, {0} },
 	{ MODKEY,	                XK_minus,  scratchpad_hide, {0} },
 	{ MODKEY|ShiftMask,             XK_equal, scratchpad_remove,{0} },
-        { MODKEY,                       XK_i,      togglecanfocusfloating,   {0} },
+        { MODKEY,                       XK_i,     togglecanfocusfloating,   {0} },
 
 };
 
