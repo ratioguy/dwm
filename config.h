@@ -93,7 +93,7 @@ static const Key keys[] = {
 	{ MODKEY,			XK_s,	   spawn,     	   SHCMD("bash ~/.local/bin/volume.sh down") },
 	{ MODKEY|ShiftMask,		XK_s,	   spawn,     	   SHCMD("bash ~/.local/bin/volume.sh mute") },
 	{ MODKEY,			XK_o,	   spawn,     	   SHCMD("pactl set-default-sink alsa_output.usb-HP_HP_Speaker_Bar-00.analog-stereo ; notify-send -t 8000 Output: Speaker") },
-	{ MODKEY|ShiftMask,		XK_o,	   spawn,     	   SHCMD("pactl set-default-sink alsa_output.pci-0000_00_1f.3.analog-stereo ; notify-send -t 8000 Output: Headphones") },
+	{ MODKEY|ShiftMask,		XK_o,	   spawn,     	   SHCMD("alsa_output.usb-TTGK_Technology_USB_Audio_33022920230925-00.analog-stereo ; notify-send -t 8000 Output: Headphones") },
 	{0,          XF86XK_MonBrightnessUp, 	   spawn,    	   SHCMD("brightnessctl -d intel_backlight set 5%+ ; notify-send Brightness $(brightnessctl  | grep % | awk '{print $4}' | sed 's/[()]//g')") },
 	{0,          XF86XK_MonBrightnessDown, 	   spawn,    	   SHCMD("brightnessctl -d intel_backlight set 5%- ; notify-send Brightness $(brightnessctl  | grep % | awk '{print $4}' | sed 's/[()]//g')") },
 	{ MODKEY,			XK_p,	   spawn,     	   SHCMD("scrot --select --line mode=edge --freeze ~/Pictures/Screenshots/Screenshot-%Y-%m-%d.png ; notify-send -t 2000 'Screenshot Taken.'") },
