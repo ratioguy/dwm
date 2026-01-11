@@ -30,14 +30,15 @@ static const Rule rules[] = {
 	 *	WM_CLASS(STRING) = instance, class
 	 *	WM_NAME(STRING) = title
 	 */
-	/* class      instance    title       tags mask     isfloating   monitor */
-	{ "imv",      NULL,     NULL,         0,            1,           -1 },
-	{ "MuPDF",    NULL,     NULL,         0,            1,           -1 },
-	{ "dialog",   NULL,     NULL,         0,            1,           -1 },
-	{ "gimp-file-open",     NULL,         0,       0,            1,           -1 },
-	{ "Thunar",   NULL,     NULL,         0,            1,           -1 },
-	{ "st",       NULL,     "youtube-launcher",       0,            1,           -1 },
-	{ "st",       NULL,     "pulsemixer",  0,            1,            -1 },
+	/* class      instance    title       		tags mask      isfloating   monitor */
+	{ "imv",      NULL,     NULL,         		 0,            1,           -1 },
+	{ "MuPDF",    NULL,     NULL,        		 0,            1,           -1 },
+	{ "dialog",   NULL,     NULL,			 0,            1,           -1 },
+	{ "gimp-file-open",     NULL,			 0,            0,            1 },
+	{ "Thunar",   NULL,     NULL,			 0,            1,           -1 },
+	{ "st",       NULL,     "youtube-launcher",      0,            1,           -1 },
+	{ "st",       NULL,     "youtube-downloader",    0,            1,           -1 },
+	{ "st",       NULL,     "pulsemixer",  		 0,            1,           -1 },
 
 };
 
@@ -85,7 +86,8 @@ static const Key keys[] = {
 	{ MODKEY,			XK_n,	   spawn,     	   SHCMD("st -e newsboat") },
 	{ MODKEY,			XK_t,	   spawn,     	   SHCMD("st -e htop") },
 	{ MODKEY,			XK_u,	   spawn,     	   SHCMD("st -T pulsemixer -e pulsemixer ") },
-	{ MODKEY,			XK_y,	   spawn,     	   SHCMD("st -T youtube-launcher -e ~/.local/bin/youtube-launcher.sh") },
+	{ MODKEY,			XK_y,	   spawn,     	   SHCMD("st -T youtube-launcher -e ~/.local/bin/yt-launcher.sh") },
+	{ MODKEY|ShiftMask,		XK_y,	   spawn,     	   SHCMD("st -T youtube-downloader -e ~/.local/bin/yt-downloader.sh") },
 	{0,          XF86XK_AudioRaiseVolume, 	   spawn,    	   SHCMD("bash ~/.local/bin/volume.sh up") },
 	{0,          XF86XK_AudioLowerVolume, 	   spawn,    	   SHCMD("bash ~/.local/bin/volume.sh down") },
 	{0,           		  0x1008ff12,	   spawn,    	   SHCMD("bash ~/.local/bin/volume.sh mute") },
@@ -96,9 +98,9 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,		XK_o,	   spawn,     	   SHCMD("pactl set-default-sink alsa_output.pci-0000_00_1f.3.analog-stereo ; notify-send -t 8000 Output: Headphones") },
 	{0,          XF86XK_MonBrightnessUp, 	   spawn,    	   SHCMD("brightnessctl -d intel_backlight set 5%+ ; notify-send Brightness $(brightnessctl  | grep % | awk '{print $4}' | sed 's/[()]//g')") },
 	{0,          XF86XK_MonBrightnessDown, 	   spawn,    	   SHCMD("brightnessctl -d intel_backlight set 5%- ; notify-send Brightness $(brightnessctl  | grep % | awk '{print $4}' | sed 's/[()]//g')") },
-	{ MODKEY,			XK_p,	   spawn,     	   SHCMD("xnap | pnmtopng | tee ~/Pictures/Screenshots/Screenshot-$(date +%Y-%m-%d_%N).png ; notify-send -t 2000 'Screenshot Taken.'") },
+	{ MODKEY,			XK_p,	   spawn,     	   SHCMD("xnap | pnmtopng | tee ~/Pictures/Screenshots/Screenshot-$(date +%Y-%m-%d-%S_%N).png ; notify-send -t 2000 'Screenshot Taken.'") },
 	
-	{ MODKEY|Mod1Mask,		XK_p,	   spawn,     	   SHCMD("xnap -w | pnmtopng | tee ~/Pictures/Screenshots/Screenshot-$(date +%Y-%m-%d_%N).png ; notify-send -t 2000 'Screenshot Taken.'") },
+	{ MODKEY|Mod1Mask,		XK_p,	   spawn,     	   SHCMD("xnap -w | pnmtopng | tee ~/Pictures/Screenshots/Screenshot-$(date +%Y-%m-%d-%S_%N).png ; notify-send -t 2000 'Screenshot Taken.'") },
 	{ MODKEY,			XK_backslash,	   spawn,  SHCMD("playerctl play-pause") },
 	{ MODKEY,			XK_bracketright,   spawn,  SHCMD("playerctl next") },
 	{ MODKEY,			XK_bracketleft,	   spawn,  SHCMD("playerctl previous") },
