@@ -7,8 +7,8 @@ static const unsigned int borderpx  = 1;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "monospace:size=10" };
-static const char dmenufont[]       = "monospace:size=10";
+static const char *fonts[]          = { "Literation Mono Nerd Font:size=10" };
+static const char dmenufont[]       = "Literation Mono Nerd Font:size=10";
 static const char col_gray1[]       = "#222222";
 static const char col_gray2[]       = "#444444";
 static const char col_gray3[]       = "#bbbbbb";
@@ -29,8 +29,15 @@ static const Rule rules[] = {
 	 *	WM_NAME(STRING) = title
 	 */
 	/* class      instance    title       tags mask     isfloating   monitor */
-	{ "Gimp",     NULL,       NULL,       0,            1,           -1 },
-	{ "Firefox",  NULL,       NULL,       1 << 8,       0,           -1 },
+	{ "imv",      NULL,     NULL,         		 0,            1,           -1 },
+	{ "MuPDF",    NULL,     NULL,        		 0,            1,           -1 },
+	{ "dialog",   NULL,     NULL,			 0,            1,           -1 },
+	{ "gimp-file-open",     NULL,			 0,            0,            1 },
+	{ "Thunar",   NULL,     NULL,			 0,            1,           -1 },
+	{ "st",       NULL,     "youtube-launcher",      0,            1,           -1 },
+	{ "st",       NULL,     "youtube-downloader",    0,            1,           -1 },
+	{ "st",       NULL,     "pulsemixer",  		 0,            1,           -1 },
+
 };
 
 /* layout(s) */
@@ -104,6 +111,36 @@ static const Key keys[] = {
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
+
+	/* My Bindings*/
+	{ MODKEY|ShiftMask,	        XK_b, 	   spawn,          SHCMD("firefox") },
+	{ MODKEY,	                XK_v,      spawn,          SHCMD("clipmenu -p clipboard -i") },
+	{ MODKEY|ShiftMask,             XK_v,      spawn,          SHCMD("clipdel -d .") },
+	{ MODKEY,			XK_e,	   spawn,     	   SHCMD("st -e lf") },
+	{ MODKEY|ShiftMask,		XK_m,	   spawn,     	   SHCMD("st -e ncmpcpp") },
+	{ MODKEY,			XK_n,	   spawn,     	   SHCMD("st -e newsboat") },
+	{ MODKEY|ShiftMask,			XK_t,	   spawn,     	   SHCMD("st -e htop") },
+	{ MODKEY,			XK_u,	   spawn,     	   SHCMD("st -T pulsemixer -e pulsemixer ") },
+	{ MODKEY,			XK_y,	   spawn,     	   SHCMD("st -T youtube-launcher -e ~/.local/bin/yt-launcher.sh") },
+	{0,          0x1008FF13, 	spawn,    	   SHCMD("bash ~/.local/bin/volume.sh up") },
+	{0,          0x1008FF11, 	spawn,    	   SHCMD("bash ~/.local/bin/volume.sh down") },
+	{0,          0x1008FF12,	spawn,    	   SHCMD("bash ~/.local/bin/volume.sh mute") },
+	{ MODKEY,			XK_w,	   spawn,     	   SHCMD("bash ~/.local/bin/volume.sh up") },
+	{ MODKEY,			XK_s,	   spawn,     	   SHCMD("bash ~/.local/bin/volume.sh down") },
+	{ MODKEY|ShiftMask,		XK_s,	   spawn,     	   SHCMD("bash ~/.local/bin/volume.sh mute") },
+	{ MODKEY,			XK_o,	   spawn,     	   SHCMD("pactl set-default-sink alsa_output.usb-HP_HP_Speaker_Bar-00.analog-stereo ; notify-send -t 8000 Output: Speaker") },
+	{ MODKEY|ShiftMask,		XK_o,	   spawn,     	   SHCMD("pactl set-default-sink alsa_output.pci-0000_00_1f.3.analog-stereo ; notify-send -t 8000 Output: Headphones") },
+	{0,          0x1008FF02, 	   spawn,    	   SHCMD("brightnessctl -d intel_backlight set 5%+ ; notify-send Brightness $(brightnessctl  | grep % | awk '{print $4}' | sed 's/[()]//g')") },
+	{0,          0x1008FF03, 	   spawn,    	   SHCMD("brightnessctl -d intel_backlight set 5%- ; notify-send Brightness $(brightnessctl  | grep % | awk '{print $4}' | sed 's/[()]//g')") },
+	{ MODKEY,			XK_z,	   spawn,     	   SHCMD("xnap | pnmtopng | tee ~/Pictures/Screenshots/Screenshot-$(date +%Y-%m-%d-%S_%N).png ; notify-send -t 2000 'Screenshot Taken.'") },
+	
+	{ MODKEY|Mod1Mask,		XK_z,	   spawn,     	   SHCMD("xnap -w | pnmtopng | tee ~/Pictures/Screenshots/Screenshot-$(date +%Y-%m-%d-%S_%N).png ; notify-send -t 2000 'Screenshot Taken.'") },
+	{ MODKEY,			XK_backslash,	   spawn,  SHCMD("playerctl play-pause") },
+	{ MODKEY,			XK_bracketright,   spawn,  SHCMD("playerctl next") },
+	{ MODKEY,			XK_bracketleft,	   spawn,  SHCMD("playerctl previous") },
+	
+
+
 };
 
 /* button definitions */
