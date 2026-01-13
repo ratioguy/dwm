@@ -134,7 +134,7 @@ static const Key keys[] = {
 	{0,          0x1008FF03, 	   spawn,    	   SHCMD("brightnessctl -d intel_backlight set 5%- ; notify-send Brightness $(brightnessctl  | grep % | awk '{print $4}' | sed 's/[()]//g')") },
 	{ MODKEY,			XK_z,	   spawn,     	   SHCMD("xnap | pnmtopng | tee ~/Pictures/Screenshots/Screenshot-$(date +%Y-%m-%d-%S_%N).png ; notify-send -t 2000 'Screenshot Taken.'") },
 	
-	{ MODKEY|Mod1Mask,		XK_z,	   spawn,     	   SHCMD("xnap -w | pnmtopng | tee ~/Pictures/Screenshots/Screenshot-$(date +%Y-%m-%d-%S_%N).png ; notify-send -t 2000 'Screenshot Taken.'") },
+	{ MODKEY|ShiftMask,		XK_z,	   spawn,     	   SHCMD("xnap -w | pnmtopng | tee ~/Pictures/Screenshots/Screenshot-$(date +%Y-%m-%d-%S_%N).png ; notify-send -t 2000 'Screenshot Taken.'") },
 	{ MODKEY,			XK_backslash,	   spawn,  SHCMD("playerctl play-pause") },
 	{ MODKEY,			XK_bracketright,   spawn,  SHCMD("playerctl next") },
 	{ MODKEY,			XK_bracketleft,	   spawn,  SHCMD("playerctl previous") },
