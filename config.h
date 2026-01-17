@@ -123,7 +123,7 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,			XK_t,	   spawn,     	   SHCMD("st -e htop") },
 	{ MODKEY,			XK_u,	   spawn,     	   SHCMD("st -T pulsemixer -e pulsemixer ") },
 	{ MODKEY,			XK_y,	   spawn,     	   SHCMD("st -T youtube-launcher -e ~/.local/bin/yt-launcher.sh") },
-	{ MODKEY,			XK_y,	   spawn,     	   SHCMD("st -T youtube-downloader -e ~/.local/bin/yt-downloader.sh") },
+	{ MODKEY|ShiftMask,		XK_y,	   spawn,     	   SHCMD("st -T youtube-downloader -e ~/.local/bin/yt-downloader.sh") },
 	{0,          0x1008FF13, 	spawn,    	   SHCMD("bash ~/.local/bin/volume.sh up") },
 	{0,          0x1008FF11, 	spawn,    	   SHCMD("bash ~/.local/bin/volume.sh down") },
 	{0,          0x1008FF12,	spawn,    	   SHCMD("bash ~/.local/bin/volume.sh mute") },
