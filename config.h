@@ -135,9 +135,9 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,		XK_o,	   spawn,     	   SHCMD("pactl set-default-sink alsa_output.pci-0000_00_1f.3.analog-stereo ; notify-send -t 8000 Output: Headphones") },
 	{0,          0x1008FF02, 	   spawn,    	   SHCMD("brightnessctl -d intel_backlight set 5%+ ; notify-send Brightness $(brightnessctl  | grep % | awk '{print $4}' | sed 's/[()]//g')") },
 	{0,          0x1008FF03, 	   spawn,    	   SHCMD("brightnessctl -d intel_backlight set 5%- ; notify-send Brightness $(brightnessctl  | grep % | awk '{print $4}' | sed 's/[()]//g')") },
-	{ MODKEY,			XK_z,	   spawn,     	   SHCMD("xnap | pnmtopng | tee ~/Pictures/Screenshots/Screenshot-$(date +%Y-%m-%d-%S_%N).png ; notify-send -t 2000 'Screenshot Taken.'") },
+	{ MODKEY,			XK_z,	   spawn,     	   SHCMD("scrot --select --line mode=edge --freeze ~/Pictures/Screenshots/Screenshot-%Y-%m-%d.png ; notify-send -t 2000 'Screenshot Taken.'") },
 	
-	{ MODKEY|ShiftMask,		XK_z,	   spawn,     	   SHCMD("xnap -w | pnmtopng | tee ~/Pictures/Screenshots/Screenshot-$(date +%Y-%m-%d-%S_%N).png ; notify-send -t 2000 'Screenshot Taken.'") },
+	{ MODKEY|ShiftMask,		XK_z,	   spawn,     	   SHCMD("scrot --focussed --freeze ~/Pictures/Screenshots/Screenshot-%Y-%m-%d.png ; notify-send -t 2000 'Screenshot Taken.'") },
 	{ MODKEY,			XK_backslash,	   spawn,  SHCMD("playerctl play-pause") },
 	{ MODKEY,			XK_bracketright,   spawn,  SHCMD("playerctl next") },
 	{ MODKEY,			XK_bracketleft,	   spawn,  SHCMD("playerctl previous") },
