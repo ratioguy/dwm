@@ -119,7 +119,7 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_v,      spawn,          SHCMD("clipdel -d .") },
 	{ MODKEY,			XK_e,	   spawn,     	   SHCMD("st -e lf") },
 	{ MODKEY|ShiftMask,		XK_m,	   spawn,     	   SHCMD("st -e ncmpcpp") },
-	{ MODKEY,			XK_n,	   spawn,     	   SHCMD("st -e newsboat") },
+	{ MODKEY,			XK_n,	   spawn,     	   SHCMD("st -e newsraft") },
 	{ MODKEY|ShiftMask,			XK_t,	   spawn,     	   SHCMD("st -e htop") },
 	{ MODKEY,			XK_u,	   spawn,     	   SHCMD("st -T pulsemixer -e pulsemixer ") },
 	{ MODKEY,			XK_y,	   spawn,     	   SHCMD("st -T youtube-launcher -e ~/.local/bin/yt-launcher.sh") },
